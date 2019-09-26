@@ -27,15 +27,7 @@ class App extends Component{
       .get("/api/posts")
       .then(res => {
         this.setState({
-          postList: res.data,
-          roastList: res.data.filter(post => {
-            return post.type_of_post == 'Roast'
-          }),
-          boastList: res.data.filter(post => {
-            return post.type_of_post == 'Boast'
-          })
-        
-        
+          postList: res.data
         })
       })
       .catch(err => console.log(err))
@@ -48,12 +40,13 @@ class App extends Component{
     console.log(postList)
     console.log(tempList)
 
-    showRoasts = () => {
-      this.setState({
-        roasts: true,
-        boasts: false
-      })
-    }
+    const roastsOnly = postList.filter(post => {
+      return post.type_of_post == 'Roast'
+    })
+
+    const boastsOnly = postList.filter(post => {
+      return post.type_of_post == 'Boast'
+    })
 
     return (
       <div>
