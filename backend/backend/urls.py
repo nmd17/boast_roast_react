@@ -19,13 +19,20 @@ from rest_framework import routers
 from boast_roast import views
 
 router = routers.DefaultRouter()
-router.register(r'posts', views.PostView, 'post'),
+router.register(r'posts', views.PostView, 'post')
+
+
+
+print(router)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('delete/<str:magic>/', views.delete)
 ]
+
+print(urlpatterns)
 
 
 

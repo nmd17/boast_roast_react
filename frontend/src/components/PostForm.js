@@ -11,7 +11,6 @@ class PostForm extends Component{
             type_of_post: 'Boast',
             upvotes: 0,
             downvotes: 0,
-
         }
     }
 
@@ -21,8 +20,7 @@ class PostForm extends Component{
         })
     }
 
-    typeChange = event => {
-        
+    typeChange = event => { 
         this.setState({
             type_of_post: event.target.value
         })

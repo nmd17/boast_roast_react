@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 class Post extends Component{
+
     downvote = id => {
         axios.get(`http://localhost:8000/api/posts/${id}/`)
         .then(res => {
@@ -12,8 +13,7 @@ class Post extends Component{
                 body: res.data.body
             })
 
-            this.props.refresh()
-            
+            this.props.refresh()   
         })
     }
 
@@ -32,7 +32,6 @@ class Post extends Component{
     
     render(){
         const { id, downvotes, upvotes, body, type, created} = this.props
-        
 
         return(
             <Card style={{ width: '18rem' }}>
@@ -49,7 +48,6 @@ class Post extends Component{
             </Card>
         )
     }
-
 }
 
 export default Post

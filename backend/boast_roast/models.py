@@ -1,9 +1,19 @@
 from django.db import models
+import string
+import random
 
 # Create your models here.
 
 
 class Post(models.Model):
+    def magicWord(self):
+        constant = string.ascii_lowercase
+        result = ''
+        for i in range(6):
+            result += random.choice(constant)
+
+        return result
+
     Boast = 'Boast'
     Roast = 'Roast'
 

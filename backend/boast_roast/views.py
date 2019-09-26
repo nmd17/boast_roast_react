@@ -11,3 +11,12 @@ from django.middleware.csrf import get_token
 class PostView(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     queryset = Post.objects.all()
+
+
+def delete(request, magic_string):
+    print('fired')
+    pass
+
+
+
+
