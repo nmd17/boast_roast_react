@@ -27,7 +27,12 @@ class App extends Component{
       .get("/api/posts")
       .then(res => {
         this.setState({
-          postList: res.data
+          postList: res.data,
+          roastList: res.data.filter(post => {
+            return post.type_of_post == 'Roast'
+          })
+        
+        
         })
       })
       .catch(err => console.log(err))
