@@ -4,6 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 class Post extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            showPopup: false
+        }
+    }
 
     downvote = id => {
         axios.get(`http://localhost:8000/api/posts/${id}/`)

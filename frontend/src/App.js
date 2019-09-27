@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios'
-import Post from './components/Post'
+import React, { Component } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button } from 'react-bootstrap'
 import Timeline from './components/Timeline'
 

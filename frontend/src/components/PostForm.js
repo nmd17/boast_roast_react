@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
-import NavBar from './NavBar'
 import { Form, Button } from 'react-bootstrap'
-import axios from 'axios';
+import axios from 'axios'
+
 
 class PostForm extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             body: '',
             type_of_post: 'Boast',
             upvotes: 0,
             downvotes: 0,
+            showPopup: false, 
+            magic: ''
         }
     }
 
@@ -36,12 +38,16 @@ class PostForm extends Component{
             downvotes: this.state.downvotes
         })
         .then(res => {
-            console.log(res)
-            console.log(res.data)
+            alert("If you would like to delete this post in the future" + "\n" +
+                "enter the link provide below into the browser" + "\n" + 
+                `http://localhost:8000/delete/${res.data.magic}/`
+            )
         })
     }
 
     render(){
+        
+
         return(
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px'}}>
                 <Form onSubmit={this.handleSubmit} style={{ border: '2px solid lightblue',borderRadius: '5px', padding: '10px', width: '300px'}}>
@@ -56,12 +62,11 @@ class PostForm extends Component{
                     <option>Roast</option>
                     </Form.Control>
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button  variant="primary" type="submit">
                 Submit
                 </Button>
             </Form>
-            </div>
-            
+            </div>  
         )
     }
 }

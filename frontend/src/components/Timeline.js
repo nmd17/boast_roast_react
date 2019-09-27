@@ -47,7 +47,6 @@ class Timeline extends Component{
                 <div style = {{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                 { postList.map(post => (
                   <Post
-                  refresh = {this.refreshList}
                   type={post.type_of_post}
                   body={post.body}
                   upvotes={post.upvotes}
@@ -63,7 +62,6 @@ class Timeline extends Component{
                 <div style = {{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                 { roastList.map(post => (
                   <Post
-                  refresh = {this.refreshList}
                   type={post.type_of_post}
                   body={post.body}
                   upvotes={post.upvotes}
@@ -79,7 +77,6 @@ class Timeline extends Component{
                 <div style = {{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                 { boastList.map(post => (
                   <Post
-                  refresh = {this.refreshList}
                   type={post.type_of_post}
                   body={post.body}
                   upvotes={post.upvotes}
@@ -95,7 +92,6 @@ class Timeline extends Component{
                 <div style = {{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                 { sortedList.map(post => (
                   <Post
-                  refresh = {this.refreshList}
                   type={post.type_of_post}
                   body={post.body}
                   upvotes={post.upvotes}

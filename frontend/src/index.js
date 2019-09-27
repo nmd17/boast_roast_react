@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import NavBar from './components/NavBar'
 import PostForm from './components/PostForm'
+import DeletePost from './components/DeletePost'
 import * as serviceWorker from './serviceWorker';
-import { Link, Switch, Route, BrowserRouter as Router} from 'react-router-dom';
+import { Switch, Route, BrowserRouter as Router} from 'react-router-dom';
 
 
 const routing = (
@@ -15,9 +16,11 @@ const routing = (
         <Switch>
           <Route exact path="/" component={App} />
           <Route path="/newpost" component={PostForm} />
+          <Route path="/deletesuccess" component={DeletePost} />
         </Switch>
       </div>
     </Router>
+    
   )
 
 

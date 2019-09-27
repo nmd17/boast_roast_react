@@ -29,7 +29,7 @@ print(router)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('delete/<str:magic>/', views.delete)
+    path('delete/<str:delete_magic>/', views.delete)
 ]
 
 print(urlpatterns)
